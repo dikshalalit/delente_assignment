@@ -15,8 +15,6 @@ export default function Products() {
       });
   }, []);
 
-  console.log("products", products);
-
   return (
     <div>
       {products.map((product) => {
