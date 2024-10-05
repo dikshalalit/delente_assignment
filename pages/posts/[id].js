@@ -18,8 +18,6 @@ export function getStaticPaths() {
 }
 
 export function getStaticProps({ params }) {
-  const postId = parseInt(params.id);
-  const post = postsData.find((p) => p.id === postId);
-
+  const post = postsData.find((p) => p.id === parseInt(params.id));
   return { props: { post } };
 }
