@@ -6,7 +6,7 @@ export default function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    callApi("https://fakestoreapi.com/products")
+    callApi("https://fakestoreapi.com/products", "GET")
       .then((res) => {
         setProducts(res);
       })

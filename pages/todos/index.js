@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { callApi } from "../utils/api";
+import Loader from "../component/loader";
 
 export default function Todos() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    callApi("https://jsonplaceholder.typicode.com/todos")
+    callApi("https://jsonplaceholder.typicode.com/todos", "GET")
       .then((res) => {
         setList(res);
       })
@@ -16,9 +17,13 @@ export default function Todos() {
 
   return (
     <div>
-      {list.slice(0, 10).map((item) => {
-        return <ListItem key={item.id} item={item} />;
-      })}
+      {list.length ? (
+        list.slice(0, 10).map((item) => {
+          return <ListItem key={item.id} item={item} />;
+        })
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }
