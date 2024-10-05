@@ -17,7 +17,7 @@ export default function Todos() {
   return (
     <div>
       {list.slice(0, 10).map((item) => {
-        return <ListItem item={item} />;
+        return <ListItem key={item.id} item={item} />;
       })}
     </div>
   );
@@ -25,7 +25,7 @@ export default function Todos() {
 
 function ListItem({ item }) {
   return (
-    <div key={item.id}>
+    <div>
       <p>{item.title}</p>
     </div>
   );
