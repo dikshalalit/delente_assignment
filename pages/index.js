@@ -1,5 +1,6 @@
 import Link from "next/link";
 import postsData from "./data/posts.json";
+import Counter from "./component/counter";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
           </li>
         ))}
       </ul>
+
+      <Counter />
     </div>
   );
 }
