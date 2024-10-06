@@ -27,3 +27,40 @@ body.dark {
   --background-color: #333333;
   --text-color: #ffffff;
 }
+
+.app_container {
+  margin: 40px calc((100% - 1280px) / 2);
+  width: 1280px;
+}
+
+.home_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.blogs_heading {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.blogs_list li {
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+}
+
+.blogs_list li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.blogs_list li a span {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--text-color);
+}

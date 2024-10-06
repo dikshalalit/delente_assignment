@@ -1,0 +1,23 @@
+.product_detail_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product_detail_right_col {
+  width: 40%;
+  height: 440px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_detail_left_col {
+  width: 60%;
+  padding-left: 10%;
+  color: var(--text-color);
+}
+
+.product_detail_left_col p {
+  margin: 10px 0;
+}

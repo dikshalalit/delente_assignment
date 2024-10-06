@@ -27,6 +27,8 @@ export default function ProductPage() {
   }, [id]);
 
   return (
-    <div>{product ? <ProductDetail product={product} /> : <Loader />}</div>
+    <div className="app_container">
+      {product ? <ProductDetail product={product} /> : <Loader />}
+    </div>
   );
 }

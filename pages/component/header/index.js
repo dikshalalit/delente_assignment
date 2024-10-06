@@ -7,14 +7,18 @@ export default function Header() {
   return (
     <header className={style.header}>
       <div className={style.nav_items_row}>
-        <ThemeToggle />
         {navbarData.map((navItem) => {
           return (
-            <Link href={navItem.path} className={style.navbar_item}>
+            <Link
+              href={navItem.path}
+              className={style.navbar_item}
+              key={navItem.id}
+            >
               {navItem.title}
             </Link>
           );
         })}
+        <ThemeToggle />
       </div>
     </header>
   );

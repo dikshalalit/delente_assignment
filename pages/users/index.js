@@ -1,7 +1,9 @@
+import style from "./style.module.css";
+
 export default function Users({ users }) {
   return (
-    <div>
-      <table>
+    <div className="app_container">
+      <table className={style.user_table}>
         <thead>
           <tr>
             <th>Name</th>

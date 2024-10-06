@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { callApi } from "../utils/api";
 import Loader from "../component/loader";
+import style from "./style.module.css";
 
 export default function Todos() {
   const [list, setList] = useState([]);
@@ -16,10 +17,10 @@ export default function Todos() {
   }, []);
 
   return (
-    <div>
+    <div className="app_container">
       {list.length ? (
-        list.slice(0, 10).map((item) => {
-          return <ListItem key={item.id} item={item} />;
+        list.slice(0, 10).map((item, index) => {
+          return <ListItem key={item.id} item={item} serialNum={index + 1} />;
         })
       ) : (
         <Loader />
@@ -28,9 +29,10 @@ export default function Todos() {
   );
 }
 
-function ListItem({ item }) {
+function ListItem({ item, serialNum }) {
   return (
-    <div>
+    <div className={style.todo_list_item}>
+      <span>{serialNum}. </span>
       <p>{item.title}</p>
     </div>
   );

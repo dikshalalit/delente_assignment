@@ -1,0 +1,39 @@
+.product_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product_card p:nth-child(1) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em;
+  line-height: 1.2em;
+}
+
+.product_card p:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+.product_card {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.product_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}

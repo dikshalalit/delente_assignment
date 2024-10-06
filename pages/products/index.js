@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { callApi } from "../utils/api";
 import Image from "next/image";
+import style from "./style.module.css";
+import Link from "next/link";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -16,9 +18,9 @@ export default function Products() {
   }, []);
 
   return (
-    <div>
+    <div className={`app_container ${style.product_container}`}>
       {products.map((product) => {
-        return <Product product={product} />;
+        return <Product product={product} key={product.id} />;
       })}
     </div>
   );
@@ -26,10 +28,12 @@ export default function Products() {
 
 function Product({ product }) {
   return (
-    <div key={product.id}>
-      <p>{product.title}</p>
-      <p>{product.price}</p>
+    <Link href={`/products/${product.id}`} className={style.product_card}>
       <Image src={product.image} width={100} height={100} alt={product.title} />
-    </div>
+      <div>
+        <p>{product.title}</p>
+        <p>${product.price}</p>
+      </div>
+    </Link>
   );
 }

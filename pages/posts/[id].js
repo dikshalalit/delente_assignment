@@ -1,10 +1,12 @@
 import postsData from "../data/posts.json";
+import style from "./style.module.css";
 
 export default function PostDetails({ post }) {
   return (
-    <div>
-      <p>{post.title}</p>
-      <p> {post.author}</p>
+    <div className={`app_container ${style.post_container}`}>
+      <p>
+        {post.title} <span>{post.author}</span>
+      </p>
       <p>{post.content}</p>
     </div>
   );

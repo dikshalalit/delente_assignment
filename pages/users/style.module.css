@@ -1,0 +1,25 @@
+.user_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user_table th,
+.user_table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--background-color);
+  color: var(--text-color);
+}
+
+.user_table th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.user_table tbody tr:nth-child(odd) {
+  background-color: var(--background-color);
+}
+
+.user_table tbody tr:nth-child(even) {
+  background-color: var(--foreground-color);
+}

@@ -1,0 +1,6 @@
+.todo_list_item {
+  display: flex;
+  gap: 5px;
+  color: var(--text-color);
+  padding: 5px 0;
+}
