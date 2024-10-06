@@ -15,7 +15,7 @@ export const callApi = async (url, method, body) => {
           if (text) {
             resolve(JSON.parse(text));
           } else {
-            resolve({});
+            reject(`Error: ${response.status}`);
           }
         });
       })

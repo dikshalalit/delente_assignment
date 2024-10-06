@@ -11,7 +11,6 @@ body {
 body.light {
   --primary-color: #1aba8d;
   --secondary-color: #329bfe;
-  --tertiary-color: #fdcd33;
 
   --foreground-color: #ffffff;
   --background-color: #ebebeb;
@@ -21,7 +20,6 @@ body.light {
 body.dark {
   --primary-color: #1aba8d;
   --secondary-color: #329bfe;
-  --tertiary-color: #fdcd33;
 
   --foreground-color: #4d4d4d;
   --background-color: #333333;
@@ -63,6 +61,36 @@ body.dark {
   text-decoration: none;
   font-size: 1rem;
   color: var(--text-color);
+}
+
+.page_not_found_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page_not_found_head {
+  font-size: 5rem;
+  color: var(--text-color);
+  text-align: center;
+}
+.page_not_found_para {
+  font-size: 2rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.page_not_found_goback_btn {
+  color: var(--foreground-color);
+  background-color: var(--text-color);
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 @media (max-width: 1280px) {
