@@ -9,6 +9,10 @@
   text-align: left;
   border: 1px solid var(--background-color);
   color: var(--text-color);
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .user_table th {

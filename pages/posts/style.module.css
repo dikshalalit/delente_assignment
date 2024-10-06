@@ -1,3 +1,6 @@
+.post_container p {
+  color: var(--text-color);
+}
 .post_container p:nth-child(1) {
   width: fit-content;
   font-size: 1.5rem;
