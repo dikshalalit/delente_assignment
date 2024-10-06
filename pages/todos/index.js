@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { callApi } from "../utils/api";
+import callApi from "../../utils/api";
 import Loader from "../component/loader";
 import style from "./style.module.css";
 

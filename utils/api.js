@@ -1,4 +1,4 @@
-export const callApi = async (url, method, body) => {
+export default async function callApi(url, method, body) {
   return new Promise((resolve, reject) => {
     fetch(url, {
       method: method,
@@ -23,4 +23,4 @@ export const callApi = async (url, method, body) => {
         reject(error);
       });
   });
-};
+}

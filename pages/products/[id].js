@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Loader from "../component/loader";
 import { useRouter } from "next/router";
-import { callApi } from "../utils/api";
+import callApi from "../../utils/api";
 
 const ProductDetail = dynamic(() => import("../component/productDetail"), {
   loading: () => <Loader />,

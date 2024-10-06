@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { callApi } from "../utils/api";
+import CallApi from "../../utils/api";
 import Image from "next/image";
 import style from "./style.module.css";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export default function Products() {
 
   useEffect(() => {
     setLoading(true);
-    callApi("https://fakestoreapi.com/products", "GET")
+    CallApi("https://fakestoreapi.com/products", "GET")
       .then((res) => {
         setProducts(res);
         setLoading(false);
