@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 20px;
+  background-color: red;
+  padding: 10px;
+}
+.navbar_item {
+  text-decoration: none;
+}
