@@ -1,11 +1,19 @@
 .header {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  column-gap: 20px;
-  background-color: red;
+  justify-content: center;
+  background-color: var(--foreground-color);
   padding: 10px;
 }
+
+.nav_items_row {
+  width: 1280px;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 20px;
+  align-items: center;
+}
+
 .navbar_item {
   text-decoration: none;
+  color: var(--text-color);
 }

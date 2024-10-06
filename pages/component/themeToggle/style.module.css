@@ -1,10 +1,9 @@
 .theme_toggle_container {
-  width: 50px;
-  height: 20px;
-  background-color: pink;
+  width: 60px !important;
+  height: 30px;
+  background-color: var(--background-color);
   border-radius: 30px;
-  padding: 5px;
-  position: relative;
+  position: relative !important;
   display: flex;
   align-items: center;
 }
@@ -18,13 +17,13 @@
   border-radius: 10px;
   cursor: pointer;
   position: absolute;
-  transition: transform 0.25s ease-in;
+  transition: transform 0.1s ease-in;
 }
 
 .light_toogle_btn {
-  transform: translateX(0px);
+  transform: translateX(5px);
 }
 
 .dark_toogle_btn {
-  transform: translateX(30px);
+  transform: translateX(35px);
 }
