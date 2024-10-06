@@ -14,12 +14,6 @@ export default function ThemeProvider({ children }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    applyTheme();
-  }, [isLight]);
-
-  const setTheme = () => setIsLight(!isLight);
-
-  const applyTheme = () => {
     localStorage.setItem("isLightMode", JSON.stringify(isLight));
     if (isLight) {
       document.body.classList.add("light");
@@ -28,7 +22,9 @@ export default function ThemeProvider({ children }) {
       document.body.classList.add("dark");
       document.body.classList.remove("light");
     }
-  };
+  }, [isLight]);
+
+  const setTheme = () => setIsLight(!isLight);
 
   return (
     <ThemeContext.Provider value={{ isLight, setTheme }}>
