@@ -11,24 +11,38 @@ const ProductDetail = dynamic(() => import("../component/productDetail"), {
 
 export default function ProductPage() {
   const [product, setProduct] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const router = useRouter();
   const id = router.query.id;
 
   useEffect(() => {
     if (id) {
+      setLoading(true);
       callApi(`https://fakestoreapi.com/products/${id}`, "GET")
         .then((res) => {
           setProduct(res);
+          setLoading(false);
         })
         .catch((err) => {
           console.log("err", err);
+          setError("Failed to load product.");
+          setLoading(false);
         });
     }
   }, [id]);
 
   return (
     <div className="app_container">
-      {product ? <ProductDetail product={product} /> : <Loader />}
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <p>{error}</p>
+      ) : product ? (
+        <ProductDetail product={product} />
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }

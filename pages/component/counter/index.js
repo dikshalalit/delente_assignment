@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { HiOutlinePlus } from "react-icons/hi";
-import { HiMinus } from "react-icons/hi2";
 import { FiMinus } from "react-icons/fi";
-
 import style from "./style.module.css";
 
 export default function Counter() {

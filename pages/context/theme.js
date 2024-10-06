@@ -3,11 +3,24 @@ import { useContext, createContext, useState, useEffect } from "react";
 export const ThemeContext = createContext();
 
 export default function ThemeProvider({ children }) {
-  const [isLight, setIsLight] = useState(true);
+  const [isLight, setIsLight] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("isLightMode");
+      return storedTheme ? JSON.parse(storedTheme) : true;
+    }
+    return true;
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    applyTheme();
+  }, [isLight]);
 
   const setTheme = () => setIsLight(!isLight);
 
   const applyTheme = () => {
+    localStorage.setItem("isLightMode", JSON.stringify(isLight));
     if (isLight) {
       document.body.classList.add("light");
       document.body.classList.remove("dark");
@@ -16,10 +29,6 @@ export default function ThemeProvider({ children }) {
       document.body.classList.remove("light");
     }
   };
-
-  useEffect(() => {
-    applyTheme();
-  }, [isLight]);
 
   return (
     <ThemeContext.Provider value={{ isLight, setTheme }}>

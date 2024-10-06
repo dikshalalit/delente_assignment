@@ -1,0 +1,18 @@
+.loader_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 130px);
+}
+
+.loader_box {
+  background-color: var(--foreground-color);
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+}
